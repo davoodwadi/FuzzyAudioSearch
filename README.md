@@ -3,8 +3,8 @@ Retrieve Audio Segment in Large Text Corpus
 
 # Installation
 ```
-git clone https://github.com/davoodwadi/FuzzyAligner.git
-cd FuzzyAligner
+git clone https://github.com/davoodwadi/FuzzyAudioSearch.git
+cd FuzzyAudioSearch
 python -m venv venv
 
 # if on Windows
@@ -16,27 +16,24 @@ pip install -r requirements.txt
 ```
 
 # Usage
-*Note.* The easiest way to use the aligner is to use a bash compatible terminal (e.g. MacOS/Linux Terminal or Windows [Git Bash](https://gitforwindows.org/))
 
 ```
-python xaligner.py -a audiofile -t textfile
+python FuzzyAudioSearch.py -a audio_file -t text_file
 ```
 
-where ```audiofile``` is the path to the audio whose subtitles you need. 
+where ```audio_file``` is the path to the audio file you want to use to search.
 
-```textfile``` is the path to the transcript.
+```text_file``` is the path to the large corpus.
 
-You can optionally pass ```-d``` to set the duration (in seconds) of each chunk of the audio.
+You can optionally pass ```-c``` to set the chunk of the start and end of audio to find matches.
 ```
-python xaligner.py -a audiofile -t textfile -d 60
+python FuzzyAudioSearch.py -a audio_file -t text_file -c 100
 ```
 
-This can be helpful if you run out of memory.
-
-While the default model size, ```tiny```, is sufficient for many texts, for multilingual texts (e.g. books by Nietzsche, which contains English and German text) it helps to use larger ```whisper``` models.
+While the default model size, ```tiny```, is sufficient for many texts, for multilingual texts (e.g. books by Nietzsche, which contain English and German text) it helps to use larger ```whisper``` models.
 
 ```
-python xaligner.py -a audiofile -t textfile -d 60 -m tiny
+python FuzzyAudioSearch.py -a audio_file -t text_file -c 100 -m tiny
 ```
 
 model options:
@@ -46,7 +43,7 @@ model options:
 - large-v3
 
 # Credits
-- [Whisperx](https://github.com/m-bain/whisperX/tree/main)
+- [faster_whisper](https://github.com/SYSTRAN/faster-whisper)
 - [FuzzySearch](https://github.com/taleinat/fuzzysearch)
 
 # Citation
