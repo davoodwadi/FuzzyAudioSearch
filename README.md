@@ -48,10 +48,10 @@ model options:
 
 # Citation
 ```
-@software{Wadi_Forced_Alignment_of_2023,
+@software{Wadi_Retrieve_Audio_Segment_2023,
 author = {Wadi, Davood},
 month = jan,
-title = {{Forced Alignment of Long Audio using Fuzzy String Search}},
+title = {{Retrieve Audio Segment in Large Text Corpus }},
 version = {0.0.1},
 year = {2023}
 }
